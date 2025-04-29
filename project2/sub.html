@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>iamhere sub</title>
+    <link rel="stylesheet" href="s.css" />
+    
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .wrap {
+        max-width: 1600px;
+        margin: auto;
+        padding: 1 40px;
+        position: relative;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #fff;
+        color: #000;
+        line-height: 1.6;
+      }
+
+      .top-bar {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      .top-bar span.bold-text {
+        font-weight: bold;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 20px 40px;
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10; 
+        
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li {
+        list-style: none;
+        position: relative;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 5px;
+      }
+
+      nav ul li a.active {
+        color: #e76a3c;
+        border-bottom: 2px solid #e76a3c;
+      }
+
+      nav ul li a:hover {
+        color: #e76a3c;
+        border-bottom: 2px solid #e76a3c;
+      }
+
+      nav ul li:hover .submenu {
+        display: block;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(197, 193, 193, 0.75);
+        padding: 10px 0;
+        width: 200px;
+        border-radius: 5px;
+      }
+
+      .submenu a {
+        display: block;
+        padding: 10px 20px;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .submenu a:hover {
+        color: #e76a3c;
+      }
+
+      .mainicon1 {
+        margin-left: auto;
+        display: flex;
+        gap: 15px;
+      }
+
+      .mainicon1 img {
+        width: 28px;
+        height: 28px;
+      }
+
+      main {
+        height: 750px;
+        background-size: 100% 100%;
+        position: relative; 
+        z-index: 1;
+      }
+
+      .banner-container {
+        position: relative;
+        width: 100%;
+        height: 750px;
+        overflow: hidden;
+        background-size: 100% 100%;
+      }
+
+      .banner-slide {
+        display: flex;
+        width: 500%; 
+        animation: slide 25s infinite;
+      }
+
+      .banner-slide img {
+        width: 20%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @keyframes slide {
+      5% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-20%);
+      }
+      40% {
+        transform: translateX(-40%);
+      }
+      60% {
+        transform: translateX(-60%);
+      }
+      80% {
+        transform: translateX(-80%);
+      }
+  
+      }
+
+      .icon-menu {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 30px 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+
+      .icon-item {
+        text-align: center;
+      }
+
+      .icon-item img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        transition: filter 0.3s ease;
+      }
+     
+
+      .icon-item:hover img {
+        filter: sepia(100%) saturate(500%) hue-rotate(-30deg); 
+      }
+      .md {
+        max-width: 1600px;
+        margin: 60px auto;
+        padding: 0 40px;
+      }
+
+      .md-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .md-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .bg1 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sm1 {
+        width: 23%;
+        height: auto;
+        border-radius: 40px;
+        padding: 0px;
+      }
+
+      .sm1 img {
+        width: 350px;
+        height: 350px;
+        border-radius: 40px;
+        background-size: 100% 100%;
+      }
+
+      .sm1-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .sm1 p {
+        font-size: 14px;
+      }
+
+      .sm1-price {
+        text-decoration: line-through;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .sm1-sale {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .sm1-sale span {
+        color: #e76a3c;
+      }
+
+
+      .bd {
+        max-width: 1600px;
+        margin: 60px auto;
+        padding: 0 40px;
+      }
+
+      .bd-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .bd-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .bg2 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sm2 {
+        width: 23%;
+        padding: 15px;
+        text-align: center;
+        height: auto;
+        border-radius: 40px;
+        padding: 0px;
+        position: relative;
+      }
+
+      .sm2 img {
+        width: 350px;
+        height: 350px;
+        border-radius: 40px;
+        background-size: 100% 100%;
+        transition: opacity 0.3s ease;
+      }
+
+        .sm2 .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 350px;
+        height: 390px;
+        background-color: rgba(163, 163, 163, 0.5); /* 불투명한 배경 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+        border-radius: 40px;
+      }
+
+      .sm2 .text {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+      }
+
+      .sm2:hover .overlay {
+        opacity: 1; 
+      }
+
+      .sm2:hover .text {
+        opacity: 1; 
+      }
+
+      .sm2:hover img {
+        opacity: 0.3; 
+      }
+
+      .bd-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .bd-item h3 {
+          font-size: 16px;
+          font-weight: bold;
+          margin-top: 10px;
+          color: #777;
+      }
+
+      .bd-item p {
+          font-size: 14px;
+          color:black;
+          font-weight: bold;
+      }
+      
+
+      .c {
+        max-width: 1600px;
+        margin: 60px auto;
+        padding: 0 40px;
+      }
+
+      .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .c-header span {
+        color: #e76a3c;
+      }
+
+      .c-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+
+      .bg3 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sm3 {
+        width: 23%;
+        height: auto;
+        border-radius: 40px;
+        padding: 0px;
+      }
+
+      .sm3 img {
+        width: 350px;
+        height: 350px;
+        border-radius: 40px;
+        background-size: 100% 100%;
+      }
+
+      .sm3-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .sm3-price {
+        text-decoration: line-through;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .sm3-sale {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      .sm3-sale span {
+        color: #e76a3c;
+      }
+      
+      .view-all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 120px;
+        height: 40px;
+        border: 2px solid #ddd;
+        border-radius: 50px;
+        font-size: 16px;
+        color: black;
+        background: white;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .view-all:hover {
+        border-color: black;
+      }
+
+      
+      .footer {
+        background: #000;
+        color: #fff;
+        padding: 60px 40px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .footer h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        padding-top: 20px;
+      }
+
+      .footer-bottom a {
+        color: #aaa;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .social-icons img,
+      .app-icons img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+        background: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <p>
+        <span class="bold-text">브랜드</span> SHOP은 합리적인 금액에 고품질의 제품을 만나볼 
+        수 있는 아이앰히어 <span class="bold-text">브랜드</span> 제품 컬렉션 입니다
+        
+      </p>
+    </div>
+
+
+    <main>
+      <header class="wrap">
+        <div class="logo">
+          <a href="index.html">iamhere.</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>
+              <a href="#" class="active" >브랜드</a>
+              <ul class="submenu">
+                <li><a href="#">가인리빙</a></li>
+                <li><a href="#">나이믹</a></li>
+                <li><a href="#">달리즘</a></li>
+                <li><a href="#">디아크</a></li>
+                <li><a href="#">드레이</a></li>
+                <li><a href="#">쿼키</a></li>
+                <li><a href="#">진지</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">디자이너</a>
+              <ul class="submenu">
+                <li><a href="#">강형구</a></li>
+                <li><a href="#">김지원</a></li>
+                <li><a href="#">본태스튜디오</a></li>
+                <li><a href="#">서충교</a></li>
+                <li><a href="#">예끼</a></li>
+                <li><a href="#">손상우</a></li>
+                <li><a href="#">조병주</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">컨설팅</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">룩북</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </nav>
+
+        <div class="mainicon1">
+          <a href="#"><img src="img/mi1.png" /></a>
+          <a href="#"><img src="img/mi2.png" /></a>
+        </div>
+      </header>
+
+      <div class="banner-container">
+        <div class="banner-slide">
+          <img src="img/subm1.png" alt="Banner 1" />
+          <img src="img/subm2.png" alt="Banner 2" />
+          <img src="img/subm3.png" alt="Banner 3" />
+          <img src="img/subm4.png" alt="Banner 4" />
+          <img src="img/subm5.png" alt="Banner 5" />
+        </div>
+      </div>
+    </main>
+
+    <div class="icon">
+      <div class="icon-menu">
+        <div class="icon-item">
+          <img src="img/i1.png" />
+          <div>테이블</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i2.png" />
+          <div>의자</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i3.png" />
+          <div>소파</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i4.png" />
+          <div>수납장</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i5.png" />
+          <div>침대</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i6.png" />
+          <div>조명</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i7.png" />
+          <div>홈데코</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i8.png" />
+          <div>키즈·펫</div>
+        </div>
+      </div>
+
+      <div class="md">
+        <div class="md-header">
+          <h2>브랜드 <span>BEST</span> 상품</h2>
+          <a href="#" class="view-all">전체보기 →</a>
+        </div>
+
+        <div class="bg1">
+          <div class="sm1">
+            <img src="img/be1.png" />
+            <div class="sm1-name">라라브릭</div>
+            <p>레귤러 세트 Regular set / 모듈가구 / 브릭 6개입 구성</p>
+            <div class="sm1-sale">
+              <strong>1,476,800원</strong>
+            </div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/be2.png" />
+            <div class="sm1-name">슬립디노</div>
+            <p>리본 패브릭 침대(Q/K 1700)</p>
+            <div class="sm1-sale">
+              <strong>1,320,000원</strong>
+            </div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/be3.png" />
+            <div class="sm1-name">리을 라이팅</div>
+            <p>부암 램프 BUAM LAMP-003 / L SIZE / 테이블램프</p>
+            <div class="sm1-sale">139,000원</div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/be4.png" />
+            <div class="sm1-name">드레이</div>
+            <p>콤비 체어 오크 / 식탁의자 / 다이닝룸 / Oak </p>
+            <div class="sm1-sale">
+              <strong>430,000원</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bd">
+      <div class="bd-header">
+        <h2>브랜드</h2>
+        <a href="#" class="view-all">전체보기 →</a>
+      </div>
+      <div class="bg2">
+      <div class="sm2">
+        <div class="bd-image">
+          <img src="img/bd1.png" />
+          <div class="overlay">
+            <div class="text">DALISM</div>
+          </div>
+        </div>
+        <h3>DALISM</h3>
+        <p>달리즘</p>
+      </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd2.png" />
+            <div class="overlay">
+              <div class="text">aspekt</div>
+        </div>
+          </div>
+        <h3>aspekt</h3>
+        <p>애즈펙트</p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd3.png" />
+            <div class="overlay">
+              <div class="text">seensawsee </div>
+        </div>
+        </div>
+        <h3>seensawsee </h3>
+        <p> 씬쏘씨 </p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd4.png" />
+            <div class="overlay">
+              <div class="text">VANOSIX </div>
+        </div>
+        </div>
+        <h3>VANOSIX</h3>
+        <p>베노식스</p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd5.png" />
+            <div class="overlay">
+              <div class="text">Odic</div>
+        </div>
+        </div>
+        <h3>Odic</h3>
+        <p>오딕</p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd6.png" />
+            <div class="overlay">
+              <div class="text">STUDIO DIBS</div>
+        </div>
+        </div>
+        <h3>STUDIO DIBS</h3>
+        <p>스튜디오 딥스</p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd7.png" />
+            <div class="overlay">
+              <div class="text">archifurni</div>
+        </div>
+        </div>
+        <h3>archifurni </h3>
+        <p>아키퍼니 </p>
+        </div>
+
+        <div class="sm2">
+          <div class="bd-image">
+            <img src="img/bd8.png" />
+            <div class="overlay">
+              <div class="text">thebezalel</div>
+        </div>
+        </div>
+        <h3>thebezalel</h3>
+        <p> 더브살렐</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+        <div class="c">
+          <div class="c-header">
+            <h2>브랜드 <span>컬렉션</span></h2>
+            <a href="#" class="view-all">전체보기 →</a>
+          </div>
+  
+          <div class="bg3">
+            <div class="sm3">
+              <img src="img/cr1.png" />
+              <div class="sm3-name">우슴</div>
+              <p>오브제캔들 [픽셀] / 홈데코 / 오브제</p>
+              <div class="sm3-sale">
+                <strong>32,900원</strong>
+              </div>
+            </div>
+  
+            <div class="sm3">
+              <img src="img/cr2.png" />
+              <div class="sm3-name">슬립디노</div>
+              <p>레이지 패브릭 침대(Q/K 1700) </p>
+              <div class="sm3-sale">
+                <strong>1,400,000원</strong>
+              </div>
+            </div>
+            <div class="sm3">
+              <img src="img/cr3.png" />
+              <div class="sm3-name">가인리빙</div>
+              <p>론 식탁의자 VOL.1 / Rhone dining chair VOL.1 </p>
+              <div class="sm3-sale">
+                <strong>470,000원</strong>
+              </div>
+            </div>
+            <div class="sm3">
+              <img src="img/cr4.png" />
+              <div class="sm3-name">루체드</div>
+              <p>WOOD MAGAZINE RACK 우드 매거진 랙</p>
+              <div class="sm3-sale">
+                <strong>350,000원</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2 class="footer-logo"><i>iam</i>here.</h2>
+        <p>02-541-3906 / 010-9754-7707</p>
+        <p>상호명: 주식회사 아이엠히어</p>
+        <p>대표자: 정혜원</p>
+        <p>서울시 중구 다산로 18길 8, 2층</p>
+        <p>운영시간: 월-금 10:00 - 18:00</p>
+        <p>점심시간: 월-금 12:00 - 13:00</p>
+        <p>사업자등록번호: 741-88-02053</p>
+        <p>통신판매업신고: 제 2021-서울서초-2939호</p>
+      </div>
+
+      <div class="footer-account">
+        <h3>ACCOUNT INFO</h3>
+        <p>IBK 기업은행 064-16573-04-013</p>
+        <p>예금주: (주)아이엠히어</p>
+      </div>
+
+      <div class="footer-customer">
+        <h3>CUSTOMER SERVICE</h3>
+        <p>FAQ</p>
+        <p>공지사항</p>
+        <p>1:1 문의</p>
+        <p>회원 혜택</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>CONTACT</h3>
+        <p>info@iamherebrand.com</p>
+        <p>입점 문의</p>
+        <p>제휴 문의</p>
+        <p>B2B 문의</p>
+        <p>프로젝트 문의</p>
+      </div>
+
+      <div class="footer-social">
+        <h3>FOLLOW US</h3>
+        <div class="social-icons">
+          <img src="img/f1.png" />
+          <img src="img/f2.png" />
+          <img src="img/f3.png" />
+          <img src="img/f4.png" />
+        </div>
+        <h3>앱 다운로드</h3>
+        <div class="app-icons">
+          <img src="img/f5.png" />
+          <img src="img/f6.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+    </div>
+  </footer>
+  </body>
+</html>
