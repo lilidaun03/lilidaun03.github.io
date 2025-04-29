@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.wrap {
+  max-width: 1600px;
+  margin: auto;
+}
+
+main {
+  height: 800px;
+  background: url(img/aaa.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+header {
+  padding: 2% 0%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+nav {
+  width: 1px;
+}
+
+nav ul {
+  width: max-content;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.bg1 {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(img/bbbb.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg1 h1 {
+  color: white;
+  text-align: center;
+  font-size: 6rem;
+  padding: 1rem 2rem;
+}
+
+.bg2 {
+  text-align: center;
+  padding: 1rem 0;
+  height: 700px;
+  background: black;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.box1 {
+  display: flex;
+  padding: 5%;
+  justify-content: space-between;
+}
+
+.sm1 {
+  width: 700px;
+  text-align: center;
+  justify-content: center;
+}
+
+.sm1 img {
+  width: 400px;
+  height: 400px;
+}
+
+.bg3 {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  flex-wrap: wrap;
+}
+
+.left {
+  width: 500px;
+  padding: 60px;
+}
+
+h2,
+p {
+  text-align: center;
+}
+
+.right {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sm2 {
+  text-align: center;
+  width: 29%;
+  color: white;
+}
+
+.sm2 img {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+}
+
+.bg4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10%;
+  background: bisque;
+  height: 700px;
+  background: url(img/c1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.box2 {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+.bottom {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem;
+  border: 1px solid white;
+  color: white;
+}
+
+.bg5 {
+  text-align: center;
+  padding: 2rem 0;
+  background: black;
+  color: white;
+}
+
+.box3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sm3 {
+  width: 370px;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+
+.sm3 img {
+  width: 400px;
+  height: auto;
+}
+
+.footer {
+  background-color: black;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-logo h2 {
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.footer-links {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: gray;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-info p {
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+.footer-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  color: white;
+}
+
+.footer-button {
+  margin-top: 1rem;
+}
+
+.footer-button button {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  color: #bbb;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.footer-button button:hover {
+  background-color: #bbb;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  a {
+    font-size: 0.7rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  main {
+    height: auto;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 0;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: auto;
+  }
+
+  main {
+    height: 300px;
+    background-size: cover;
+  }
+
+  .bg1 {
+    height: 200px;
+  }
+
+  .bg1 h1 {
+    font-size: 1.8rem;
+  }
+
+  .bg2 {
+    padding: 1rem;
+    height: auto;
+    font-size: 1rem;
+  }
+
+  .box1 {
+    padding: 1%;
+  }
+
+  .sm1 {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.4rem;
+  }
+
+  .sm1 img {
+    width: 80%;
+    height: auto;
+  }
+
+  .bg3 {
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    width: 100%;
+    padding: 1px;
+    font-size: 1rem;
+  }
+
+  .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .sm2 {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .sm2 img {
+    width: 80%;
+    height: auto;
+  }
+
+  .bg4 {
+    padding: 1%;
+    height: 500px;
+  }
+
+  .box2 {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.6rem;
+  }
+
+  .btn {
+    padding: 0.6rem;
+    font-size: 0.5rem;
+  }
+
+  .box3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bg5 {
+    font-size: 0.8rem;
+    padding: 1rem 0;
+  }
+
+  .sm3 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    padding: 0.1rem;
+  }
+
+  .footer-logo h2 {
+    font-size: 0.8rem;
+  }
+
+  .footer-links a {
+    font-size: 0.5rem;
+  }
+
+  .footer-info p {
+    font-size: 0.5rem;
+  }
+
+  .footer-button button {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+  }
+}

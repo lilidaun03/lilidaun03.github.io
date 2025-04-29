@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>layout fullx</title>
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            color: white;
+            font-size: 1rem;;
+            text-decoration: none;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        body{
+            color: white;
+          font-size: 1.1rem;
+        }
+
+        .wrap{
+            max-width: 1600px;
+            margin: auto;
+        }
+
+        main{
+            height: 800px;
+            background: url(img/aaa.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        header{
+            padding: 2% 0%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .logo{
+            font-weight: bold;
+            margin-right: 2%;
+        }
+
+        nav{
+            width: 1px;
+        }
+
+        nav ul{
+            width: max-content;
+        }
+
+        nav ul li{
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .bg1{
+           height: 600px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: url(img/bbbb.jpg)no-repeat;
+           background-size: 100% 100%;
+           
+        }
+
+        .bg1 h1{
+            color: white;
+            text-align: center;
+            font-size: 6rem;
+            padding: 1rem 2rem;
+        }
+
+        .bg2{
+            text-align: center;
+            padding: 1rem 0;
+            height: 700px;
+            background: black;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .box1{
+            display: flex;
+            padding: 5%;
+            justify-content: space-between;
+         }
+
+        .sm1{ 
+            width: 700px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .sm1 img{
+            width: 400px;
+            height: 400px;
+        }
+
+
+        .bg3{
+            height: 350px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            flex-wrap: wrap;
+        }
+
+        .left{
+            width: 500px;
+            padding: 60px;
+          
+        }
+
+        h2,p{
+            text-align: center;
+        }
+
+        .right{
+            width: 60%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .sm2{
+            text-align: center;
+            width:29%;
+            color: white;
+        
+        }
+        
+        .sm2 img{ 
+            width: 100%;
+            height: 80%;
+            text-align: center;
+            
+        }
+
+        .bg4{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10%;
+            background: bisque;
+            height: 700px;
+            background: url(img/c1.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .box2{
+            max-width: 600px
+
+        }
+
+        h1{
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p{
+            margin-bottom: 30px;
+        }
+
+        .bottom{
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn{
+            display: inline-block;
+            padding: 0.8rem;
+            border: 1px solid white;
+            color: white;
+        }  
+
+
+        .bg5{
+            text-align: center;
+            padding: 2rem 0;
+            background: black;
+            color: white;
+        }
+
+        .box3{
+            display: flex;
+            justify-content: space-between;
+        
+         }
+
+        .sm3{ 
+            width: 370px;
+            text-align: center;
+            background-position: center center;
+            background-size: cover;
+            background-size: 100% 100%;
+        }
+
+        .sm3 img{
+            width: 400px;
+            height: auto;
+        }
+                
+        .footer {
+            background-color: black;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        .footer-links {
+            margin: 10px 0;
+        }
+
+        .footer-links a {
+            color: gray;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-info p {
+            font-size: 0.8rem;
+            margin: 5px 0;
+        }
+
+        .footer-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            color: white;
+        }
+
+        .footer-button {
+            margin-top: 1rem;
+        }
+
+        .footer-button button {
+            background-color: transparent;
+            border: 1px solid #bbb;
+            color: #bbb;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .footer-button button:hover {
+            background-color: #bbb;
+            color: black;
+        }
+
+        @media (max-width:600px){
+            a{
+            font-size: 0.7rem;;
+            }
+
+            body {
+                font-size: 1rem;
+            }
+
+            main {
+                height: auto; 
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 4% 0;
+            }
+
+            .logo {
+                margin-right: 0;
+                margin-bottom: 2px; 
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: auto;
+            }
+
+            main {
+                height: 300px;
+                background-size: cover;
+            }
+
+            .bg1 {
+                height: 200px;
+            }
+
+            .bg1 h1 {
+                font-size: 1.8rem; 
+            }
+
+            .bg2 {
+                padding: 1rem;
+                height: auto;
+                font-size: 1rem;
+            }
+
+            .box1 {
+                padding: 1%;
+            }
+
+            .sm1 {
+                width: 100%;  
+                margin-bottom: 1rem;  
+                font-size: 0.4rem;
+            }
+
+            .sm1 img {
+                width: 80%;  
+                height: auto;  
+            }
+            
+            .bg3 {
+                height: auto;  
+                display: flex;
+                align-items: center;
+            }
+
+            .left {
+                width: 100%; 
+                padding: 1px;  
+                font-size: 1rem;
+            }
+
+            .right {
+                width: 100%; 
+                display: flex;
+                align-items: center;
+            }
+
+            .sm2 {
+                width: 100%;  
+                margin-bottom: 1rem;  
+                text-align: center;
+            }
+
+            .sm2 img {
+                width: 80%; 
+                height: auto;
+            }
+
+            .bg4 {
+                padding: 1%;
+                height: 500px;
+            }
+
+            .box2 {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p{
+                font-size: 0.6rem;
+            }
+
+            .btn {
+                padding: 0.6rem;
+                font-size: 0.5rem;
+            }
+
+            .box3 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bg5{
+            font-size: 0.8rem;
+            padding: 1rem 0;
+            }
+
+            .sm3 {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .footer {
+                padding: 0.1rem;
+            }
+
+            .footer-logo h2 {
+                font-size: 0.8rem;
+            }
+
+            .footer-links a {
+                font-size: 0.5rem;
+            }
+
+            .footer-info p {
+                font-size: 0.5rem;
+            }
+
+            .footer-button button {
+                font-size: 0.5rem;
+                padding: 0.5rem;
+            }
+        }
+        
+
+
+      
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="wrap">
+            <div class="logo">JOSUN HOTELS & RESORTS</div>
+            <nav>
+                <ul>
+                    <li><a href="#">HOTELS</a></li>
+                    <li><a href="#">OFFERS</a></li>
+                    <li><a href="#">MEMBERSHIP</a></li>
+                    <li><a href="#">RETAL BUSINESS</a></li>
+                    <li><a href="#">JOSUN LOUNGE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </main>
+
+    <div class="bg1">
+        <h1> GO <br>
+        TO OFFERS </h1>
+    </div>
+
+    <div class="bg2">
+        <h2>JOSUN TASTE & STYLE</h2>
+        
+    <div class="box1">
+            <div class="sm1">
+                <img src="img/j1.jpg">
+                <h3> 조선호텔 포기김치</h3>
+                <p>53,100원</p>
+             </div>
+
+             <div class="sm1">
+                <img src="img/j2.jpg">
+                <h3> 치즈 아이스크림 케이크</h3>
+                <p>42,000원</p>
+            </div>
+
+            <div class="sm1">
+                <img src="img/j3.jpg">
+                <h3>볼링저 스페셜 뀌베</h3>
+                <p>140,000원</p>
+            </div>
+    </div>
+    </div>
+
+    <div class="bg3">
+        <div class="left">
+            <h2> JOSUN LOUNGE</h2>
+            <p> l<br>조선호텔엔리조트가 만드는 웹매거진 <br>
+            누구나 편하게 앉아 흥미로운 이야기와 함께 <br>
+        휴식을 취하는 라운지 공간을 소개합니다.</p>
+        </div>
+
+        <div class="right">
+            <div class="sm2">
+            <img src="img/l1.jpg">
+            <p> Base is for Ace</p>
+            </div>
+
+        <div class="sm2">
+            <img src="img/l2.jpg">
+            <p> History of Art Room</p>
+            </div>
+
+            <div class="sm2">
+            <img src="img/l3.jpg">
+            <p> Velvety Night</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="bg4">
+        <div class="box2">
+            <h1>CLUB JOSUN</h1>
+            <p>품격 있는 서비스와 다채로운 라이프 스타일을 선사하는<br>
+                조선호텔앤리조트의 통합 멤버십 프로그램, 클럽조선(CLUB JOSUN)<br>
+                지금 회원만을 위한 특별한 혜택과 경험을 확인해보세요.</p>
+
+            <div class="bottom">
+                <a href="#" class="btn"> VIEW MORE & JOIN</a>
+                <a href="#" class="btn"> MEMBERS EVENT</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg5">
+        <h2>RETAIL BUSINESS</h2>
+        <p> 조선호텔앤리조트의 라이프 스타일 브랜드<br>
+            호스피탈리티 전문성을 바탕으로 확장한 라이프 스타일 브랜드를 소개합니다.</p>
+        
+    <div class="box3">
+            <div class="sm3">
+            <img src="img/r1.jpg" >
+            </div>
+
+            <div class="sm3">
+            <img src="img/r2.jpg" >
+            </div>
+
+            <div class="sm3">
+            <img src="img/r3.jpg" >
+            </div>
+            
+            <div class="sm3">
+            <img src="img/r4.jpg" >
+            </div>
+
+            <div class="sm3">
+            <img src="img/r5.jpg" >
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-logo">
+                <h2>JOSUN HOTELS & RESORTS</h2>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">고객센터 |</a>
+                <a href="#">웹사이트 이용약관 |</a>
+                <a href="#">멤버십 이용약관 |</a>
+                <a href="#">모바일 상품권 이용약관 |</a>
+                <a href="#">지류 이용권 이용약관 |</a>
+                <a href="#">개인정보처리방침 |</a>  
+            </div>
+
+            <div class="footer-info">
+                <p>서울시 중구 소공로 106 대표이사 전상진 T. 02-771-0500 E. <br>
+                    <a href="mailto:josunhotels_resorts@shinsegae.com">josunhotels_resorts@shinsegae.com</a></p>
+                <p>사업자등록번호 104-81-27386 통신판매신고번호 중구 0623호</p>
+                <p>호스팅서비스제공자 : 신세계아이앤씨</p>
+                <p>&copy; 2020 JOSUN HOTELS & RESORTS Co. All rights reserved.</p>
+            </div>
+
+            <div class="footer-button">
+                <button onclick="window.location.href='#'">
+                    사업자정보확인</button>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+</html> 
