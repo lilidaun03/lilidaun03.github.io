@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iamhere_mobile</title>
+    <link rel="stylesheet" href="s.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .wrap {
+        max-width: 100%;
+        margin: auto;
+        padding: 1rem;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #fff;
+        color: #000;
+        line-height: 1.6;
+      }
+
+      .top-bar {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 0.6rem;
+        font-size: 0.7rem;
+      }
+
+      .top-bar span.bold-text {
+        font-weight: bold;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        position: relative;
+      }
+
+      .logo {
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-left: 1rem;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        width: 100%;
+      }
+
+      nav ul li {
+        list-style: none;
+        position: relative;
+        position: relative;
+        margin-bottom: 0.625rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 0.75rem 1rem;
+        color: #000;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        width: 100%;
+      }
+
+      nav ul li a.active,
+      nav ul li a:hover {
+        color: #e76a3c;
+        border-bottom: 0.125rem solid #e76a3c;
+      }
+
+      nav ul li:hover .submenu {
+        display: block;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        cursor: pointer;
+        margin-right: 1rem;
+      }
+
+      .hamburger-icon {
+        width: 1.25rem;
+        height: 0.125rem;
+        background: #000;
+      }
+
+      .submenu {
+        display: none;
+        background: rgba(197, 193, 193, 0.75);
+        padding: 0.625rem 0;
+        width: 100%;
+        border-radius: 0.3rem;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li:hover .submenu,
+      .submenu.open {
+        display: block;
+      }
+
+      .submenu a {
+        padding: 0.625rem 1rem;
+        color: #000;
+        text-decoration: none;
+        display: block;
+        font-size: 0.95rem;
+      }
+
+      .submenu a:hover {
+        color: #e76a3c;
+      }
+
+      main {
+        background: url("img/mm.png") no-repeat center center;
+        background-size: 100% 100%;
+        background-position: center 38px;
+        padding-bottom: 20rem;
+      }
+
+      .icon-menu {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 2rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        gap: 1rem;
+      }
+
+      .icon-item {
+        text-align: center;
+        width: 22%;
+        margin-bottom: 1.25rem;
+      }
+
+      .icon-item:hover img {
+        filter: sepia(100%) saturate(500%) hue-rotate(-30deg);
+      }
+
+      .icon-item img {
+        width: 60%;
+        height: auto;
+        transition: filter 0.3s ease;
+      }
+
+      .md {
+        max-width: 100%;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+
+      .md-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .md-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .bg1 {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .sm1 {
+        width: 46%;
+        height: auto;
+        border-radius: 1rem;
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+
+      .sm1 img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: cover;
+      }
+
+      .sm1-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.5rem;
+      }
+
+      .sm1 p {
+        font-size: 0.875rem;
+      }
+
+      .sm1-price {
+        text-decoration: line-through;
+        color: #999;
+        margin-top: 0.3rem;
+      }
+
+      .sm1-sale {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.3rem;
+      }
+
+      .sm1-sale span {
+        color: #e76a3c;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 1.625rem;
+        font-weight: bold;
+        margin: 5rem 0 1.5rem;
+      }
+
+      .title span {
+        color: #e76a3c;
+      }
+
+      .bg2,
+      .bg4,
+      .designer-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: nowrap;
+        padding: 2rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+
+      .bg2 {
+        padding: 2rem;
+      }
+
+      .bg4,
+      .designer-list {
+        padding: 2rem;
+      }
+
+      .sm2,
+      .sm3 {
+        width: 60%;
+        max-width: 240px;
+        height: auto;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+      }
+
+      .sm2 img,
+      .sm3 img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        background-size: cover;
+        transition: opacity 0.3s ease;
+        display: block;
+      }
+
+      .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        width: 80%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+      }
+
+      .sm2:hover img,
+      .sm3:hover img {
+        opacity: 0.3;
+      }
+
+      .sm2:hover .text-overlay,
+      .sm3:hover .text-overlay {
+        opacity: 1;
+      }
+
+      .bg2,
+      .bg4,
+      .designer-list {
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bg2::-webkit-scrollbar,
+      .bg4::-webkit-scrollbar,
+      .designer-list::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .bg2::-webkit-scrollbar-thumb,
+      .bg4::-webkit-scrollbar-thumb,
+      .designer-list::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .bg2::-webkit-scrollbar-track,
+      .bg4::-webkit-scrollbar-track,
+      .designer-list::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
+      .trend-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 100%;
+        margin: 1rem auto;
+        padding: 0 1rem;
+      }
+
+      .trend-item .item {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .image-box {
+        width: 100%;
+        aspect-ratio: 3 / 1;
+        border-radius: 2rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2rem;
+      }
+
+      .text-box {
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+
+      .text-box h3 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        color: #000;
+      }
+
+      .trend-item .text-box {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 1px;
+        text-align: center;
+      }
+
+      .trend-item h3 span {
+        color: #e76a3c;
+      }
+
+      .trend-item h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #000;
+      }
+
+      .bg4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .video-box {
+        width: 100%;
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .video-box video {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 1rem;
+        object-fit: cover;
+      }
+
+      .bg5 {
+        max-width: 100%;
+        padding: 0 1rem;
+      }
+
+      .bg5-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        margin: 2rem auto 1rem;
+        max-width: 100%;
+        gap: 1rem;
+      }
+
+      .designer-list {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem 1rem 2rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding: 1rem;
+      }
+
+      .designer-item {
+        flex: 0 0 auto;
+        width: 60%;
+        max-width: 240px;
+        scroll-snap-align: start;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .designer-image {
+        width: 100%;
+        height: 280px;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .designer-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .designer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .designer-item h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 0.75rem;
+        color: #555;
+      }
+
+      .designer-item p {
+        font-size: 0.875rem;
+        color: #222;
+        font-weight: bold;
+      }
+
+      .view-all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        color: #000;
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 999px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+        width: auto;
+        min-width: 6.5rem;
+        height: 2.5rem;
+      }
+
+      .view-all:hover {
+        border-color: #000;
+        background-color: #f8f8f8;
+      }
+
+      .footer {
+        background: #000;
+        color: #fff;
+        padding: 3rem 5%;
+        font-size: 0.875rem;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .footer-section {
+        width: 48%;
+        min-width: 150px;
+      }
+
+      .footer h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid #444;
+        padding-top: 1rem;
+        font-size: 0.8rem;
+      }
+
+      .footer-bottom a {
+        color: #aaa;
+        text-decoration: none;
+        margin: 0 0.5rem;
+      }
+
+      .social-icons img,
+      .app-icons img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        background: #777;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* 모바일 메뉴 */
+      @media (max-width: 768px) {
+        .logo {
+          margin-left: 10px;
+        }
+
+        nav.active {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: #f8f8f8;
+          width: 250px;
+          border-left: 1px solid #ccc;
+          padding: 20px;
+        }
+
+        nav ul {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <p>
+        신규 가입 시, 즉시 사용 가능한
+        <span class="bold-text">웰컴쿠폰팩 + 포인트 선물</span>
+        받으세요!
+      </p>
+    </div>
+
+    <main>
+      <header class="wrap">
+        <div class="logo">
+          <a href="index_mobile.html">iamhere.</a>
+        </div>
+
+        <!-- 햄버거 버튼 -->
+        <button class="menu-toggle">
+          <span class="hamburger-icon"></span>
+          <span class="hamburger-icon"></span>
+          <span class="hamburger-icon"></span>
+        </button>
+
+        <nav>
+          <ul>
+            <li><a href="index_mobile.html" class="active">HOME</a></li>
+            <li>
+              <a href="index4-sub.html">브랜드</a>
+              <ul class="submenu">
+                <li><a href="index4-sub.html">가인리빙</a></li>
+                <li><a href="index4-sub.html">나이믹</a></li>
+                <li><a href="index4-sub.html">달리즘</a></li>
+                <li><a href="index4-sub.html">디아크</a></li>
+                <li><a href="index4-sub.html">드레이</a></li>
+                <li><a href="index4-sub.html">쿼키</a></li>
+                <li><a href="index4-sub.html">진지</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">디자이너</a>
+              <ul class="submenu">
+                <li><a href="#">강형구</a></li>
+                <li><a href="#">김지원</a></li>
+                <li><a href="#">본태스튜디오</a></li>
+                <li><a href="#">서충교</a></li>
+                <li><a href="#">예끼</a></li>
+                <li><a href="#">손상우</a></li>
+                <li><a href="#">조병주</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">컨설팅</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">룩북</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </nav>
+      </header>
+    </main>
+    <script src="script_mobile.js"></script>
+
+    <div class="icon">
+      <div class="icon-menu">
+        <div class="icon-item">
+          <img src="img/i1.png" />
+          <div>테이블</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i2.png" />
+          <div>의자</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i3.png" />
+          <div>소파</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i4.png" />
+          <div>수납장</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i5.png" />
+          <div>침대</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i6.png" />
+          <div>조명</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i7.png" />
+          <div>홈데코</div>
+        </div>
+        <div class="icon-item">
+          <img src="img/i8.png" />
+          <div>키즈·펫</div>
+        </div>
+      </div>
+
+      <div class="md">
+        <div class="md-header">
+          <h2>전문 MD 추천</h2>
+          <a href="#" class="view-all">전체보기 →</a>
+        </div>
+
+        <div class="bg1">
+          <div class="sm1">
+            <img src="img/md1.png" />
+            <div class="sm1-name">쿼키</div>
+            <p>HAK Sofa 1-seater / 1인 소파 / 라운지 소파</p>
+            <div class="sm1-price">3,200,000원</div>
+            <div class="sm1-sale">
+              <span>15%</span> <strong>2,720,000원</strong>
+            </div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/md2.png" />
+            <div class="sm1-name">쿼키</div>
+            <p>HAK Sofa 2-seater / 2인 소파 / 라운지 소파</p>
+            <div class="sm1-price">3,436,000원</div>
+            <div class="sm1-sale">
+              <span>15%</span> <strong>2,920,600원</strong>
+            </div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/md3.png" />
+            <div class="sm1-name">라라브릭</div>
+            <p>라라브릭 미러 lalabrick mirror / 거울 / 소품 / 패브릭 / 쿠션</p>
+            <div class="sm1-sale">78,000원</div>
+          </div>
+
+          <div class="sm1">
+            <img src="img/md4.png" />
+            <div class="sm1-name">가인리빙</div>
+            <p>SY 소파(SY-SF-001L) / 부클</p>
+            <div class="sm1-price">3,970,000원</div>
+            <div class="sm1-sale">
+              <span>15%</span> <strong>3,374,500원</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title"><span>브랜드</span> 추천 상품</div>
+
+    <div class="bg2">
+      <div class="sm2">
+        <div class="text-overlay">
+          <h2>바실러티</h2>
+          <p>BS01 모듈 선반 4set</p>
+        </div>
+        <img src="img/b1.png" />
+      </div>
+
+      <div class="sm3">
+        <div class="text-overlay">
+          <h2>나이믹</h2>
+          <p>마벨 1100 화장대 <br />콘솔 - 화이트</p>
+        </div>
+        <img src="img/b2.png" />
+      </div>
+
+      <div class="sm2">
+        <div class="text-overlay">
+          <h2>바실러티</h2>
+          <p>BS03 모듈 선반 2set</p>
+        </div>
+        <img src="img/b3.png" />
+      </div>
+
+      <div class="sm3">
+        <div class="text-overlay">
+          <h2>리을 라이팅</h2>
+          <p>부암 포터블 램프 BUAM-005 PORTABLE LAMP</p>
+        </div>
+        <img src="img/b4.png" />
+      </div>
+
+      <div class="sm2">
+        <div class="text-overlay">
+          <h2>이형준</h2>
+          <p>
+            Pipe Fitting <br />
+            Tree_02/오브제
+          </p>
+        </div>
+        <img src="img/b5.png" />
+      </div>
+    </div>
+
+    <div class="title">지금 뜨고 있는 <span>트렌드</span></div>
+
+    <div class="bg3">
+      <div class="trend-item left">
+        <div class="image-box">
+          <img src="img/t1.png" />
+        </div>
+
+        <div class="text-box left">
+          <h3>[PHOTO SHOOT SKETCH] <span>감성 데스크테리아 아이템</span></h3>
+        </div>
+      </div>
+
+      <div class="trend-item lfet">
+        <div class="image-box">
+          <img src="img/t2.png" />
+        </div>
+
+        <div class="text-box left">
+          <h3>
+            [폰테 스튜디오] <span>잡음 없이 정적이고 동적인 On Mute, 2022</span>
+          </h3>
+        </div>
+      </div>
+
+      <div class="trend-item left">
+        <div class="image-box">
+          <img src="img/t3.png" />
+        </div>
+        <div class="text-box lfet">
+          <h3>
+            한국의 브랜드:
+            <span
+              >조화와 소재를 탐구하는 <br />가구&라이프스타일 브랜드
+              바실리티</span
+            >
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="title"><span>디자이너</span> 영상</div>
+
+    <div class="bg4">
+      <div class="video-box">
+        <video
+          src="designer_video.mp4"
+          autoplay
+          muted
+          playsinline
+          loop
+          controls
+        ></video>
+      </div>
+    </div>
+
+    <section class="bg5">
+      <div class="bg5-header">
+        <h2>디자이너</h2>
+        <a href="#" class="view-all">전체보기 →</a>
+      </div>
+
+      <div class="designer-list">
+        <div class="designer-item">
+          <div class="designer-image">
+            <img src="img/dd1.png" />
+          </div>
+          <h3>YEKKI</h3>
+          <p>예끼</p>
+        </div>
+
+        <div class="designer-item">
+          <div class="designer-image">
+            <img src="img/dd2.png" />
+          </div>
+          <h3>SON SANGWOO</h3>
+          <p>손상우</p>
+        </div>
+
+        <div class="designer-item">
+          <div class="designer-image">
+            <img src="img/dd3.png" />
+          </div>
+          <h3>SEO CHUNG KYO</h3>
+          <p>서종교</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <h2 class="footer-logo"><i>iam</i>here.</h2>
+          <p>02-541-3906 / 010-9754-7707</p>
+          <p>상호명: 주식회사 아이엠히어</p>
+          <p>대표자: 정혜원</p>
+          <p>서울시 중구 다산로 18길 8, 2층</p>
+          <p>운영시간: 월-금 10:00 - 18:00</p>
+          <p>점심시간: 월-금 12:00 - 13:00</p>
+          <p>사업자등록번호: 741-88-02053</p>
+          <p>통신판매업신고: 제 2021-서울서초-2939호</p>
+        </div>
+
+        <div class="footer-account">
+          <h3>ACCOUNT INFO</h3>
+          <p>IBK 기업은행 064-16573-04-013</p>
+          <p>예금주: (주)아이엠히어</p>
+        </div>
+
+        <div class="footer-customer">
+          <h3>CUSTOMER SERVICE</h3>
+          <p>FAQ</p>
+          <p>공지사항</p>
+          <p>1:1 문의</p>
+          <p>회원 혜택</p>
+        </div>
+
+        <div class="footer-contact">
+          <h3>CONTACT</h3>
+          <p>info@iamherebrand.com</p>
+          <p>입점 문의</p>
+          <p>제휴 문의</p>
+          <p>B2B 문의</p>
+          <p>프로젝트 문의</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>FOLLOW US</h3>
+          <div class="social-icons">
+            <img src="img/f1.png" />
+            <img src="img/f2.png" />
+            <img src="img/f3.png" />
+            <img src="img/f4.png" />
+          </div>
+          <h3>앱 다운로드</h3>
+          <div class="app-icons">
+            <img src="img/f5.png" />
+            <img src="img/f6.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+      </div>
+    </footer>
+  </body>
+</html>
